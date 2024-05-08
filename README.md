@@ -1,3 +1,3 @@
 - Nama: Ardyan Satya Perkasa
-- Judul: VitaLog
+- Judul: VitaLog Apps
 - Deskripsi: Sebuah web-apps yang membantu pengguna dalam mengorganisir catatan pengukuran GCU & vital signs secara berkala. Aplikasi dapat memberikan status kondisi kesehatan pengguna berdasarkan rekam data medis yang telah diinput. Pengguna dapat memantau rekam data medis mereka melalui visualisasi data sebagai alat bantu dalam mengontrol kesehatannya. Serta dapat melakukan penjadwalan pengukuran secara teratur.
