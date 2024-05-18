@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Input Your Glucose | VitaLog App')
+@section('title', 'Input Your Cholesterol | VitaLog App')
 
 @section('content')
-    <div id="glucose-input" class="card-input">
+    <div id="cholesterol-input" class="card-input">
         <div class="form-title">
-            <h1>Input Your Glucose</h1>
+            <h1>Input Your Cholesterol</h1>
         </div>
 
         <div class="form-wrapper">

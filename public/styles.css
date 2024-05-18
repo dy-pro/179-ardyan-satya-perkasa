@@ -1,120 +1,676 @@
+/* Load Custom Fonts Start */
+
+@font-face {
+    font-family: "Omegle";
+    src: url("/fonts/OMEGLE.ttf");
+}
+@font-face {
+    font-family: "Metropolis";
+    src: url("/fonts/Metropolis-Thin.otf");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Metropolis";
+    src: url("/fonts/Metropolis-SemiBold.otf");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Metropolis";
+    src: url("/fonts/Metropolis-ExtraBold.otf");
+    font-weight: 800;
+
+    font-style: normal;
+}
+@font-face {
+    font-family: "Metropolis";
+    src: url("/fonts/Metropolis-Medium.otf");
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Load Custome Fonts End */
+
+body {
+    display: flex;
+    flex-direction: row-reverse;
+    /* gap: 40px; */
+    /* padding: 80px; */
+    /* width: 100vw; */
+}
+
+#hm-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 80px 80px 80px 20px;
+    background-color: saddlebrown;
+    /* flex-grow: 3; */
+    /* justify-content: space-between; */
+}
+
+/* Styling Header Start */
+
 header {
-    grid-area: header;
-    display: grid;
-    grid-template-columns: repeat(9, auto);
-    grid-template-rows: repeat(2, auto);
-    column-gap: 40px;
-    row-gap: 40px;
-    background-color: aquamarine;
-}
-
-#title-container {
-    background-color: bisque;
-    grid-column-start: 1;
-    grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-#util-container {
-    background-color: blue;
-    grid-column-start: 7;
-    grid-column-end: 10;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-main {
-    grid-area: main;
-    display: grid;
-    grid-template-columns: repeat(9, auto);
-    grid-template-rows: repeat(4, auto);
-    column-gap: 40px;
-    row-gap: 40px;
+    display: flex;
+    /* gap: 40px; */
+    /* max-width: 1410px;
+    height: 380px; */
+    /* padding: 80px 80px 20px 20px */
+    gap: 40px;
+    /* border: solid 1px; */
     background-color: blueviolet;
 }
 
-#glucose-avg {
-    background-color: aqua;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
+#title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 860px;
+    height: 280px;
+    background-color: cyan;
 }
 
-#cholesterol-avg {
-    background-color:antiquewhite;
-    grid-column-start: 4;
-    grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 3;
+#title-container > h1 {
+    font-family: "Omegle";
+    font-size: 64px;
+    line-height: normal;
+    width: 410px;
+    height: 120px;
+    background-color: salmon;
 }
 
-#urid-acid-avg {
-    background-color: aqua;
-    grid-column-start: 7;
-    grid-column-end: 10;
-    grid-row-start: 1;
-    grid-row-end: 3;
+#title-container > p {
+    font-family: "Metropolis";
+    font-weight: 100;
+    font-size: 54px;
+    line-height: 3.5rem;
+    height: 120px;
+    background-color: bisque;
 }
 
-#vs-avg {
-    background-color:antiquewhite;
-    grid-column-start: 1;
-    grid-column-end: 7;
-    grid-row-start: 3;
-    grid-row-end: 5;
+#util-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 410px;
+    height: 280px;
+    background-color: cyan;
 }
 
-#ads {
-    background-color: aqua;
-    grid-column-start: 7;
-    grid-column-end: 10;
-    grid-row-start: 3;
-    grid-row-end: 5;
+#dm-wrapper {
+    display: flex;
+    height: 120px;
+    width: 410px;
+    gap: 40px;
 }
 
-aside {
-    grid-area: aside;
-    display: grid;
-    grid-template-columns: repeat(6, auto);
-    grid-template-rows: repeat(5, auto);
-    column-gap: 16px;
-    row-gap: 16px;
-    border: solid 1px;
-    border-radius: 24px;
-    padding: 16px;
+#date-container {
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+    padding: 0px 24px;
+    text-align: center;
     background-color: burlywood;
 }
 
-#user-info {
+#date-container > #date {
+    font-family: "Metropolis";
+    font-weight: 100;
+    font-size: 72px;
+    line-height: normal;
+    width: 212px;
+    height: 65px;
+    background-color: chartreuse;
+}
+
+#date-container > #month {
+    font-family: "Metropolis";
+    font-weight: 600;
+    font-size: 36px;
+    line-height: normal;
+    width: 212px;
+    height: 45px;
+    background-color: chartreuse;
+}
+
+#menu-container {
+    display: flex;
+    /* display: inline-block; */
+    /* position: relative; */
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 120px;
+    background-color: salmon;
+}
+
+/* #menu-container button {
+    background: url('images/menu.png');
+    background-color: aqua;
+} */
+
+#menu-container > .dropbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 62px;
+    height: 62px;
+    border-radius: 12px;
+    /* margin: 29px 24px; */
+    background-image: url('images/menu.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+}
+
+/* nav > img {
+    width: 45px;
+    height: 45px;
+} */
+
+
+
+
+
+.drop-content {
+    display: none;
+    position: absolute;
+    margin-top: 150px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+  }
+
+  .drop-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown a:hover {background-color: #ddd;}
+
+  .show {display: block;}
+
+
+  
+
+
+#measurement-container {
+    width: 410px;
+    height: 120px;
+    /* padding: 24px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+}
+
+#measurement-container > #measurement-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 362px;
+    height: 72px;
+    border-radius: 12px;
+    font-family: "Metropolis";
+    font-weight: 800;
+    font-size: 32px;
+    font-style: normal;
+    background-color: white;
+}
+
+.dropdown-content {
+    display: none;
+    font-size: 24px;
+    position: absolute;
+    top: 330px;
+    z-index: 1;
+    min-width: 362px;
+    background-color: antiquewhite;
+    border: 1px solid;
+    border-radius: 0px 12px 12px 12px;
+}
+
+.dropdown-content a:hover {
+    background-color: black;
+    color: white;
+}
+
+.dropdown-content #glucose:hover {
+    border-radius: 0px 12px 0px 0px;
+}
+
+.dropdown-content #urid-acid:hover {
+    border-radius: 0px 0px 12px 12px;
+}
+
+#measurement-button:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    width: 362px;
+}
+
+.button:hover{
+    border-radius: 24px 24px 0px 0px;
+}
+/* Styling HEADER End */
+
+/* Styling MAIN Start */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    gap: 40px;
+    /* max-width: 1310px; */
+    /* width: 1410px; */
+    /* height: 700px; */
+    /* padding: 20px 80px 80px 20px; */
+    /* border: solid 1px; */
+    background-color: blueviolet;
+}
+
+.card-avg {
+    display: flex;
+    flex-wrap: wrap;
+    width: 410px;
+    height: 280px;
+    padding: 16px;
+    gap: 10px;
+    /* flex-grow: 1; */
+    border-radius: 24px;
+    background-color: antiquewhite;
+}
+
+.card-avg > p {
+    font-family: "Metropolis";
+    font-weight: 600;
+    font-size: 16px;
+    font-style: normal;
+    width: 249px;
+    height: 55px;
+}
+
+.card-avg > .btn-time-range {
+    width: 119px;
+    height: 55px;
+    background-color: white;
+}
+
+.btn-time-range > button {
+    font-family: "Metropolis";
+    font-weight: 500;
+    font-size: 12px;
+    font-style: normal;
+    width: 119px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: aqua;
+}
+
+#vs-avg > .wrapper > p {
+    font-family: "Metropolis";
+    font-weight: 500;
+    font-size: 14px;
+    font-style: italic;
+}
+
+#vs-avg > .wrapper > .btn-time-range {
+    width: 147px;
+    height: 36px;
+    background-color: antiquewhite;
+}
+
+#vs-avg > .wrapper > .btn-time-range > button {
+    width: 147px;
+    height: 36px;
+}
+
+.btn-vs-option {
+    width: 255px;
+    height: 37px;
+    background-color: antiquewhite;
+}
+
+.btn-vs-option > button {
+    font-family: "Metropolis";
+    font-weight: 500;
+    font-size: 12px;
+    font-style: normal;
+    width: 255px;
+    height: 37px;
+    border-radius: 6px;
+    background-color: aqua;
+}
+
+#status-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Metropolis";
+    font-weight: 600;
+    font-size: 12px;
+    font-style: normal;
+    width: 255px;
+    height: 37px;
+    text-align: center;
+    background-color: aqua;
+}
+
+#vs-avg > .wrapper > .value-container {
+    width: 255px;
+    height: 90px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+/* #glucose-avg, #cholesterol-avg, #vs-avg {
+    margin-right: 40px;
+}
+
+#glucose-avg, #cholesterol-avg, #urid-acid-avg {
+    margin-bottom: 20px;
+}
+
+#vs-avg, #ads {
+    margin-top: 20px;
+} */
+
+#vs-avg {
+    display: flex;
+    width: 860px;
+    height: 280px;
+    gap: 16px;
+    pad: 16px;
     background-color: aquamarine;
-    grid-column-start: 1;
-    grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 2;
 }
 
-#last-measurement {
-    background-color:blueviolet;
-    grid-column-start: 1;
-    grid-column-end: 7;
-    grid-row-start: 2;
-    grid-row-end: 6;
+#vs-avg > .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    width: 255px;
+    height: 248px;
+    background-color: plum;
 }
 
-body {
-    padding: 80px;
-    display: grid;
-    grid-template-columns: repeat(12, auto);
-    grid-template-rows: repeat(6, auto);
-    column-gap: 40px;
-    row-gap: 40px;
-    grid-template-areas:
-    "aside aside header header header header header header header header header header"
-    "aside aside header header header header header header header header header header"
-    "aside aside main main main main main main main main main main"
-    "aside aside main main main main main main main main main main"
-    "aside aside main main main main main main main main main main"
-    "aside aside main main main main main main main main main main";
+#vs-avg > .chart-container {
+    width: 552px;
+    height: 248px;
+    border-radius: 12px;
+}
+
+.chart-container {
+    width: 377px;
+    height: 183px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+/* #vs-avg >.chart-container{
+    width: 552px;
+    height: 248px;
+} */
+
+/* #vs-avg > .apa-aja {
+    width: 255px;
+    height: 248px;
+} */
+/* 
+#vs-avg {
+    /* flex-grow: 2; */
+/* } */
+
+#ads {
+    padding: 0px;
+}
+
+#ads > img {
+    width: 410px;
+    height: 280px;
+    border-radius: 24px;
+}
+
+/* #img {
+    width: 410px;
+    height: 280px;
+    background-color: antiquewhite;
+} */
+
+/* Styling MAIN End */
+
+/* Styling ASIDE Start */
+
+aside {
+    /* display:flex; */
+    /* flex-direction: column; */
+    padding: 80px 20px 80px 80px;
+    /* max-width: 410px; */
+    /* flex-grow: 1; */
+    background-color: blueviolet;
+}
+
+aside > .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 410px;
+    padding: 16px;
+    border-radius: 24px;
+    /* border: solid 1px; */
+}
+
+#user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 378px;
+    gap: 10px;
+    background-color: cyan;
+}
+
+#user-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 107px;
+    height: 107px;
+    border-radius: 12px;
+    background-color: aliceblue;
+}
+
+#user-photo > img {
+    width: 95px;
+    height: 95px;
+    border-radius: 10px;
+}
+
+#user-info p {
+    font-family: "Metropolis";
+    font-weight: 600;
+    font-size: 14px;
+    font-style: normal;
+}
+
+#last-gcu-measurement {
+    display: flex;
+    gap: 16px;
+    width: 378px;
+    background-color: cyan;
+}
+
+.last-gcu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 115px;
+    height: 165px;
+    padding: 10px;
+    gap: 8px;
+    border-radius: 12px;
+    background-color: aliceblue;
+}
+
+.last-gcu > img {
+    width: 25px;
+    height: 25px;
+}
+
+.last-gcu > .value-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95px;
+    height: 74px;
+    border-radius: 6px;
+    background-color: yellow;
+}
+
+.last-gcu > p,
+.last-vs > p {
+    font-family: "Metropolis";
+    font-weight: 600;
+    font-size: 14px;
+    font-style: normal;
+}
+
+div.value-container > p {
+    font-family: "OMEGLE";
+    font-size: 24px;
+    font-style: normal;
+    line-height: 14px;
+}
+
+div.value-container > p.unit {
+    font-family: "Metropolis";
+    font-weight: 600;
+    font-size: 10px;
+    font-style: normal;
+}
+
+#last-vs-measurement {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 378px;
+    background-color: cyan;
+}
+
+.last-vs {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 181px;
+    height: 164px;
+    border-radius: 12px;
+    padding: 16px;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.last-vs > img {
+    width: 25px;
+    height: 25px;
+}
+
+.last-vs > .value-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 149px;
+    height: 63px;
+    border-radius: 6px;
+    padding: 16px;
+    background-color: yellow;
+}
+
+/* Input Form */
+
+.form-title {
+    font-family: 'Metropolis';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 24px;
+    width: 1262px;
+    height: 56px;
+    background-color: cyan;
+}
+
+.card-input {
+    display: flex;
+    flex-direction: column;
+    width: 1310px;
+    height: 600px;
+    padding: 24px;
+    gap: 10px;
+    /* flex-grow: 1; */
+    border-radius: 24px;
+    background-color: antiquewhite;
+}
+
+.form-wrapper {
+    background-color: coral;
+}
+
+.form-wrapper > form {
+    display: flex;
+    gap: 10px;
+}
+
+label {
+    font-family: 'Metropolis';
+    font-weight: 600;
+    font-size: 14px;
+    font-style: normal;
+    display: inline-block;
+    width: 244px;
+    text-align: end;
+    margin-right: 5px;
+    background-color: aqua;
+}
+
+input[type="text"] {
+    width: 244px;
+    height: 43px;
+    border-radius: 6px;
+}
+
+textarea {
+    border-radius: 6px;
+}
+
+.form-left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 499px;
+    height: 486px;
+    background-color: crimson;
+}
+
+.form-left-section > div {
+    background-color: burlywood;
+}
+
+.form-right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 753px;
+    height: 486px;
+    background-color: darkkhaki;
+}
+
+.form-right-section > label {
+    text-align: center;
 }

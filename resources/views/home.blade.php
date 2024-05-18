@@ -1,109 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite('resources/css/app.css')
-    <link rel="stylesheet" href="{{ asset('/styles.css') }}">
-    <title>VitaLog Apps</title>
-</head>
-<body>
-    <header>
-        <div id="title-container">
-            <h1>VitaLog</h1>
-            <p>Hai, Ardy<br />
-                Catat gula darahmu, yuk!
-            </p>
-        </div>
+@extends('layouts.app')
 
-        <div id="util-container">
-            <div id="menu-container">
+@section('title', 'VitaLog App')
 
-            </div>
-            <div id="measurement-container">
-                <a href="/input-glucose">Measure Now</a>
-            </div>
+@section('content')
+    <div id="glucose-avg" class="card-avg">
+        <p>Average Glucose</p>
+        <div class="btn-time-range">
+            <button>
+                Weekly
+            </button>
         </div>
-    </header>
-        
-    <main>
-        <div id="glucose-avg">
-            <p>Average Glucose</p>
-        </div>
+        <div class="chart-container"></div>
+    </div>
 
-        <div id="cholesterol-avg">
-            <p>Average Cholesterol</p>
+    <div id="cholesterol-avg" class="card-avg">
+        <p>Average Cholesterol</p>
+        <div class="btn-time-range">
+            <button>
+                Weekly
+            </button>
         </div>
+        <div class="chart-container"></div>
+    </div>
 
-        <div id="urid-acid-avg">
-            <p>Average Urid Acid</p>
+    <div id="urid-acid-avg" class="card-avg">
+        <p>Average Urid Acid</p>
+        <div class="btn-time-range">
+            <button>
+                Weekly
+            </button>
         </div>
+        <div class="chart-container"></div>
+    </div>
 
-        <div id="vs-avg">
+    <div id="vs-avg" class="card-avg">
+        <div class="chart-container"></div>
+        <div class="wrapper">
             <p>Vital Signs</p>
+            <div class="btn-time-range">
+                <button>
+                    Weekly
+                </button>
+            </div>
+            <div class="btn-vs-option">
+                <button>
+                    Blood Pressure
+                </button>
+            </div>
+            <div id="status-wrapper">
+                <p>Status: Normal</p>
+            </div>
+            <div class="value-container"></div>
         </div>
+    </div>
 
-        <div id="ads">
-            <img src="" alt="">
-        </div>
-
-    </main>
-
-    <aside>
-        <section id="user-info">
-
-            <div id="user-photo">
-
-            </div>
-
-            <p>Ardyan Satya</p>
-            <p>ardyan.satya@gmail.com</p>
-
-        </section>
-
-        <section id="last-measurement">
-            <div id="last-glucose">
-                <img src="" alt="">
-                <p>Glucose</p>
-            </div>
-
-            <div id="last-cholesterol">
-                <img src="" alt="">
-                <p>Cholesterol</p>
-            </div>
-            
-            <div id="last-urid-acid">
-                <img src="" alt="">
-                <p>Urid Acid</p>
-            </div>
-
-            <div id="last-bt">
-                <img src="" alt="">
-                <p>Temperature</p>
-            </div>
-
-            <div id="last-bp">
-                <img src="" alt="">
-                <p>Blood Pressure</p>
-            </div>
-
-            <div id="last-spo2">
-                <img src="" alt="">
-                <p>Oxygen Saturation</p>
-            </div>
-
-            <div id="last-rr">
-                <img src="" alt="">
-                <p>Respiration Rate</p>
-            </div>
-
-            <div id="last-hr">
-                <img src="" alt="">
-                <p>Heart Rate</p>
-            </div>
-        </section>
-    </aside>
-    
-</body>
-</html>
+    <div id="ads" class="card-avg">
+        <img id="img" alt="ads" src="{{ asset('images/ads.jpg') }}">
+    </div>
+@endsection
