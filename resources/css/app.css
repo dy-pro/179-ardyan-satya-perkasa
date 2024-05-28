@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "Omegle";
+        font-style: normal;
+        font-weight: 400;
+        src: url(/fonts/OMEGLE.otf) format("otf");
+    }
+    @font-face {
+        font-family: "Metropolis";
+        font-style: normal;
+        font-weight: 100;
+        src: url("/fonts/Metropolis-Thin.otf");
+    }
+    @font-face {
+        font-family: "Metropolis";
+        font-style: normal;
+        font-weight: 600;
+        src: url("/fonts/Metropolis-SemiBold.otf");
+    }
+    @font-face {
+        font-family: "Metropolis";
+        font-style: normal;
+        font-weight: 800;
+        src: url("/fonts/Metropolis-ExtraBold.otf");
+    }
+    @font-face {
+        font-family: "Metropolis";
+        font-style: normal;
+        font-weight: 500;
+        src: url("/fonts/Metropolis-Medium.otf");
+    }
+}

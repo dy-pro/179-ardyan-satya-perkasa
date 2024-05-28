@@ -1,42 +1,39 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
+use App\Http\Controllers\MeasurementController;
+use App\Http\Controllers\UserDashboardController;
+use App\Http\Middleware\LastMeasurementsMiddleware;
 
-Route::get('/', function (Request $request) {
-    return view('home', [
-        "name" => $request->name,
-        "email" => $request->email
-        // 'id' => 1,
-        // 'name' => 'Ardyan Satya',
-        // 'email' => 'ardyan.satya@gmail.com'
-    ]);
+// Route untuk homepage guest user
+Route::get('/', function () {
+    return 'hello world';
 });
 
-Route::get('/input-glucose', function (Request $request) {
-    return view('input-glucose', [
-        "name" => $request->name,
-        "email" => $request->email
-    ]);
-});
 
-Route::get('/input-cholesterol', function (Request $request) {
-    return view('input-cholesterol', [
-        "name" => $request->name,
-        "email" => $request->email
-    ]);
-});
+// Rute untuk homepage user terdaftar
+Route::get('/{id?}', [UserDashboardController::class, "show"])->name('user-dashboard');
 
-Route::get('/input-urid-acid', function (Request $request) {
-    return view('input-urid-acid', [
-        "name" => $request->name,
-        "email" => $request->email
-    ]);
-});
 
-Route::get('/history', function (Request $request) {
-    return view('history', [
-        "name" => $request->name,
-        "email" => $request->email
-    ]);
+// Route untuk measurement (CRUD)
+Route::controller(MeasurementController::class)->group(function(){
+    Route::get('/measurements/{id}', 'index')
+        ->name('measurements.index');
+
+    // Route::get('/measurements/input-gcu/{id}', 'create')
+    //     ->name('measurements.input-gcu');
+    Route::get('/measurements/{inputType}/{id}', 'create')
+        ->name('measurements.input');
+
+    Route::post('/measurements/{inputType}/{id}', 'store')
+        ->name('measurements.store');
+    
+    Route::get('/measurements/{id}/edit/{measurementId}', 'edit')
+        ->name('measurements.edit');
+    
+    Route::put('/measurements/{id}/update/{measurementId}', 'update')
+        ->name('measurements.update');
+    
+    Route::delete('/measurements/{id}/{measurementId}', 'destroy')
+        ->name('measurements.destroy');
 });
