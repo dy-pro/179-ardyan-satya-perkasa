@@ -12,7 +12,7 @@ Link dokumen terkait
 
 Vitalog adalah aplikasi web yang dirancang untuk membantu pengguna dalam mengorganisir "diari medis" mereka dengan mudah. Aplikasi ini memudahkan pengguna untuk mencatat dan memantau pengukuran GCU dan tanda-tanda vital secara berkala, serta memberikan penilaian kondisi kesehatan berdasarkan data yang diinput. Dengan Vitalog, pengguna dapat lebih teratur dalam mendokumentasikan rekam medis, memvisualisasikan data kesehatan, penjadwalan pengukuran secara teratur dan mempersiapkan dokumentasi yang diperlukan untuk komunikasi yang lebih efektif saat berkonsultasi dengan dokter.
 
-![Screenshot of the application](images/screenshots/screencapture-vitalog-test-preview.png)
+![Screenshot of the application](public/images/screenshots/screencapture-vitalog-test-preview.png)
 
 ## :: Fitur Utama :: *Minimum Requirement - total progress: 100%*
 
