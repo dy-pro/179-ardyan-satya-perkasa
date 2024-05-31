@@ -1,0 +1,50 @@
+.nmorphn {
+    /* background: #E7EBEB; */
+    border: 1px solid var(--neu-border);
+    /* box-shadow: -6px 6px 12px #c5c5c5, 6px -6px 12px #ffffff; */
+    box-shadow: -6px 6px 12px var(--drop-shadow), 6px -6px 12px oklch(var(--n));
+}
+
+.nmorphn-sm {
+    border: 1px solid var(--neu-border);
+    /* box-shadow: -6px 6px 12px #c5c5c5, 6px -6px 12px #ffffff; */
+    box-shadow: -2px 2px 7px var(--drop-shadow), 6px -6px 12px oklch(var(--n));
+}
+
+.nmorphu {
+    /* background: #E7EBEB; */
+    box-shadow: inset -2px 2px 5px var(--inset-shadow),
+                inset 5px -5px 10px oklch(var(--n));
+} 
+.nmorphu-sm {
+    /* background: #E7EBEB; */
+    box-shadow: inset -2px 2px 3px var(--inset-shadow),
+                inset 5px -5px 7px oklch(var(--n));
+} 
+.nmorphu-g {
+    background: oklch(var(--p));
+    box-shadow: inset -2px 2px 5px var(--inset-shadow),
+                inset 5px -5px 10px #ffffff80;
+} 
+.nmorphu-r {
+    background: #F5A3A3;
+    box-shadow: inset -2px 2px 5px var(--inset-shadow),
+                inset 5px -5px 10px #ffffff80;
+} 
+.nmorphu-y {
+    background: #E3F090;
+    box-shadow: inset -2px 2px 5px var(--inset-shadow),
+                inset 5px -5px 10px #ffffff80;
+} 
+
+.bg-green-200 {
+    background-color: oklch(var(--p)); /* Warna hijau */
+}
+
+.bg-yellow-200 {
+    background-color: #E3F090; /* Warna kuning */
+}
+
+.bg-red-200 {
+    background-color: #F5A3A3; /* Warna merah */
+}
