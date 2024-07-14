@@ -44,17 +44,37 @@
                             
                             @if(isset($id))
                                 <li>
-                                    <a href="{{ route('measurements.index', ['id' => $id]) }}">All Measurements</a>
+                                    <a href="{{ route('measurements.index', ['id' => $id]) }}">
+                                        <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd" d="M8 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1h2a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h2Zm6 1h-4v2H9a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2h-1V4Zm-3 8a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1Zm-2-1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H9Zm2 5a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1Zm-2-1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H9Z" clip-rule="evenodd"/>
+                                        </svg>  
+                                        All Measurements
+                                    </a>
                                 </li>
                             @else
                                 <li>
-                                    <a href="{{ url('all-measurements') }}">All Measurements</a>
+                                    <a href="{{ url('all-measurements') }}">
+                                        All Measurements
+                                    </a>
                                 </li>
                             @endif
-                                <li><a href="/settings">Settings</a></li>
+                                <li>
+                                    <a href="/settings">
+                                        <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M5 13.17a3.001 3.001 0 0 0 0 5.66V20a1 1 0 1 0 2 0v-1.17a3.001 3.001 0 0 0 0-5.66V4a1 1 0 0 0-2 0v9.17ZM11 20v-9.17a3.001 3.001 0 0 1 0-5.66V4a1 1 0 1 1 2 0v1.17a3.001 3.001 0 0 1 0 5.66V20a1 1 0 1 1-2 0Zm6-1.17V20a1 1 0 1 0 2 0v-1.17a3.001 3.001 0 0 0 0-5.66V4a1 1 0 1 0-2 0v9.17a3.001 3.001 0 0 0 0 5.66Z"/>
+                                        </svg>                                          
+                                        Settings
+                                    </a>
+                                </li>
+                                
                                 @if(session()->get('isLogged'))
                                 <li>
-                                    <a href="{{ route('auth.logout') }}">Logout</a>
+                                    <a href="{{ route('auth.logout') }}" class="text-red-800">
+                                        <svg class="w-5 h-5 text-red-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
+                                        </svg>
+                                        Logout
+                                    </a>
                                 </li>
                                 @endif
                         </ul>
@@ -178,6 +198,10 @@
             </div>
             {{-- @endif --}}
             @endforeach
+            <div class="font-metropolis ">
+                <p class="text-[12px] text-slate-400 font-thin">Although Vitalog's health assessment indicator feature provides an overview, consultation with a doctor is still required for a comprehensive evaluation</p><br /><br />
+                <p class="text-xs text-slate-400">Version: 1.0.0</p>
+            </div>
         </section>
         @else
             <div role="alert" class="alert alert-info">
@@ -190,7 +214,7 @@
     {{-- JS --}}
 
     <script>
-        document.getElementById('myDropdown').addEventListener('change', function() {
+        document.getElementById('measurement-button').addEventListener('change', function() {
             var selectedValue = this.value;
             var currentUrl = window.location.href.split('?')[0];
             window.location.href = currentUrl + '?selectedOption=' + selectedValue;
@@ -201,7 +225,7 @@
         /* When the user clicks on the button, 
         toggle between hiding and showing the dropdown content */
         function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
+          document.getElementById("measurement-button").classList.toggle("show");
         }
         
         // Close the dropdown if the user clicks outside of it

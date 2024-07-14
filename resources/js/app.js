@@ -2,22 +2,24 @@ import './bootstrap';
 import 'flowbite';
 import ApexCharts from 'apexcharts';
 
-
-const options = {
+function initChart(userId, chartId, apiUrl, seriesName, color) {
+  const options = {
     colors: ["#1A56DB", "#FDBA8C"],
     series: [
     {
-        name: "Glucose",
-        color: "#32E0C4",
-        data: [
-            { x: "Mon", y: 231 },
-            { x: "Tue", y: 122 },
-            { x: "Wed", y: 63 },
-            { x: "Thu", y: 65 },
-            { x: "Fri", y: 122 },
-            { x: "Sat", y: 323 },
-            { x: "Sun", y: 111 },
-        ],
+        name: seriesName,
+        // color: "#32E0C4",
+        color: color,
+        data: []
+        // data: [
+        //     { x: "Mon", y: 231 },
+        //     { x: "Tue", y: 122 },
+        //     { x: "Wed", y: 63 },
+        //     { x: "Thu", y: 65 },
+        //     { x: "Fri", y: 122 },
+        //     { x: "Sat", y: 323 },
+        //     { x: "Sun", y: 111 },
+        // ],
     },
     // {
     //     name: "Social media",
@@ -108,26 +110,28 @@ const options = {
     fill: {
         opacity: 1,
     },
-}
+  }
 
-if(document.getElementById("column-chart") && typeof ApexCharts !== 'undefined') {
-    const chart = new ApexCharts(document.getElementById("column-chart"), options);
+  const chart = new ApexCharts(document.getElementById(chartId), options);
     chart.render();
+
+    fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        chart.updateSeries([{
+            data: data
+        }]);
+        chart.updateOptions({
+            xaxis: {
+                categories: data.map(entry => entry.x)
+            }
+        });
+    });
+
 }
 
-if(document.getElementById("cholesterol-chart") && typeof ApexCharts !== 'undefined') {
-    const chart = new ApexCharts(document.getElementById("cholesterol-chart"), options);
-    chart.render();
-}
-
-if(document.getElementById("uric-acid-chart") && typeof ApexCharts !== 'undefined') {
-    const chart = new ApexCharts(document.getElementById("uric-acid-chart"), options);
-    chart.render();
-}
-
-
-
-const vsOptions = {
+function initLineChart(userId, chartId, apiUrl, seriesName, color) {
+  const vsOptions = {
     chart: {
       height: "130px",
       maxWidth: "100%",
@@ -172,9 +176,9 @@ const vsOptions = {
     },
     series: [
       {
-        name: "New users",
-        data: [6500, 6418, 6456, 6526, 6356, 6456],
-        color: "#32E0C4",
+        name: seriesName,
+        data: [],
+        color: color,
       },
     ],
     xaxis: {
@@ -193,9 +197,55 @@ const vsOptions = {
       show: false,
     },
   }
-  
-  if (document.getElementById("area-chart") && typeof ApexCharts !== 'undefined') {
-    const chart = new ApexCharts(document.getElementById("area-chart"), vsOptions);
+
+  const chart = new ApexCharts(document.getElementById(chartId), vsOptions);
     chart.render();
+
+    fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        chart.updateSeries([{
+            data: data
+        }]);
+        chart.updateOptions({
+            xaxis: {
+                categories: data.map(entry => entry.x)
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const userIdElement = document.getElementById('user-id');
+  if (userIdElement) {
+      const userId = userIdElement.value;
+      initChart(userId, "column-chart", `/glucose-data/${userId}`, "Glucose", "#32E0C4");
+      initChart(userId, "cholesterol-chart", `/cholesterol-data/${userId}`, "Cholesterol", "#32E0C4");
+      initChart(userId, "uric-acid-chart", `/uric-acid-data/${userId}`, "Uric Acid", "#32E0C4");
+      initLineChart(userId, "vs-chart", `/heart-rate-data/${userId}`, "Heart Rate", "#32E0C4");
   }
+});
+
+
+
+// if(document.getElementById("column-chart") && typeof ApexCharts !== 'undefined') {
+            
+// }
+
+// if(document.getElementById("cholesterol-chart") && typeof ApexCharts !== 'undefined') {
+//   const chart = new ApexCharts(document.getElementById("cholesterol-chart"), options);
+//   chart.render();
+// }
+
+// if(document.getElementById("uric-acid-chart") && typeof ApexCharts !== 'undefined') {
+//   const chart = new ApexCharts(document.getElementById("uric-acid-chart"), options);
+//   chart.render();
+// }
+
+
+  
+  // if (document.getElementById("area-chart") && typeof ApexCharts !== 'undefined') {
+  //   const chart = new ApexCharts(document.getElementById("area-chart"), vsOptions);
+  //   chart.render();
+  // }
   

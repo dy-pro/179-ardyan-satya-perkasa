@@ -13,24 +13,24 @@
         font-family: "Metropolis";
         font-style: normal;
         font-weight: 100;
-        src: url("/fonts/Metropolis-Thin.otf");
+        src: url(/fonts/Metropolis-Thin.otf);
     }
     @font-face {
         font-family: "Metropolis";
         font-style: normal;
         font-weight: 600;
-        src: url("/fonts/Metropolis-SemiBold.otf");
+        src: url(/fonts/Metropolis-SemiBold.otf);
     }
     @font-face {
         font-family: "Metropolis";
         font-style: normal;
         font-weight: 800;
-        src: url("/fonts/Metropolis-ExtraBold.otf");
+        src: url(/fonts/Metropolis-ExtraBold.otf);
     }
     @font-face {
         font-family: "Metropolis";
         font-style: normal;
         font-weight: 500;
-        src: url("/fonts/Metropolis-Medium.otf");
+        src: url(/fonts/Metropolis-Medium.otf);
     }
 }
