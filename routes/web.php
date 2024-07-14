@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MeasurementController;
+use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\UserDashboardController;
-use App\Http\Middleware\Authenticate;
 
 Route::get('/', function () {
     return redirect()->route('auth.loginPage');
@@ -19,7 +20,8 @@ Route::get('/{id?}', [UserDashboardController::class, "show"])
 // Route untuk Auth
 Route::controller(AuthController::class)->prefix('auth')->name('auth.')->group(function(){
     Route::get('/login', 'loginPage')
-        ->name('loginPage');
+        ->name('loginPage')
+        ->middleware(RedirectIfAuthenticated::class);
 
     Route::post('/login', 'login')
         ->name('login');
@@ -28,7 +30,8 @@ Route::controller(AuthController::class)->prefix('auth')->name('auth.')->group(f
         ->name('logout');
 
     Route::get('/register', 'registerPage')
-        ->name('registerPage');
+        ->name('registerPage')
+        ->middleware(RedirectIfAuthenticated::class);
         
     Route::post('/register', 'register')
         ->name('register');

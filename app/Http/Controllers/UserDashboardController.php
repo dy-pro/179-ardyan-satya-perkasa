@@ -13,6 +13,10 @@ class UserDashboardController extends Controller
 {
     
     public function show($id, Request $request) {
+        if (session()->get('userId') != $id) {
+            return redirect()->route('user-dashboard', ['id' => session()->get('userId')])
+                             ->with('error', 'Anda tidak memiliki izin untuk mengakses halaman ini.');
+        }
 
         // Mengambil data pengguna
         $user = User::findOrFail($id);

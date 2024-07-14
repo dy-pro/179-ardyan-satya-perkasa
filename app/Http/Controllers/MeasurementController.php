@@ -18,6 +18,10 @@ class MeasurementController extends Controller
      */
     public function index($id)
     {
+        if (session()->get('userId') != $id) {
+            return redirect()->route('user-dashboard', ['id' => session()->get('userId')])
+                             ->with('error', 'Anda tidak memiliki izin untuk mengakses halaman ini.');
+        }
 
         // Mengambil data pengguna tabel users
         $user = User::findOrFail($id);
@@ -81,6 +85,10 @@ class MeasurementController extends Controller
      */
     public function create($inputType, $id)
     {
+        if (session()->get('userId') != $id) {
+            return redirect()->route('user-dashboard', ['id' => session()->get('userId')])
+                             ->with('error', 'Anda tidak memiliki izin untuk mengakses halaman ini.');
+        }
 
         // Mengambil data pengguna dari tabel users
         $user = User::findOrFail($id);
@@ -207,6 +215,11 @@ class MeasurementController extends Controller
      */
     public function show($id, $measurementId)
     {
+        if (session()->get('userId') != $id) {
+            return redirect()->route('user-dashboard', ['id' => session()->get('userId')])
+                             ->with('error', 'Anda tidak memiliki izin untuk mengakses halaman ini.');
+        }
+
         // Mengambil data pengguna dari tabel users
         $user = User::findOrFail($id);
 
@@ -273,6 +286,10 @@ class MeasurementController extends Controller
      */
     public function edit($id, $measurementId)
     {
+        if (session()->get('userId') != $id) {
+            return redirect()->route('user-dashboard', ['id' => session()->get('userId')])
+                             ->with('error', 'Anda tidak memiliki izin untuk mengakses halaman ini.');
+        }
 
         // Mengambil data pengguna dari tabel users
         $user = User::findOrFail($id);
